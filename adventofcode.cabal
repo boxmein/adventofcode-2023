@@ -26,6 +26,7 @@ source-repository head
 library
   exposed-modules:
       DayOne
+      DayTwo
       Lib
   other-modules:
       Paths_adventofcode
@@ -48,11 +49,24 @@ executable dayone-exe
     , base >=4.7 && <5
   default-language: Haskell2010
 
+executable daytwo-exe
+  main-is: DayTwoMain.hs
+  other-modules:
+      Paths_adventofcode
+  hs-source-dirs:
+      app
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      adventofcode
+    , base >=4.7 && <5
+  default-language: Haskell2010
+
 test-suite adventofcode-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
       DayOneSpec
+      DayTwoSpec
       Paths_adventofcode
   hs-source-dirs:
       test
