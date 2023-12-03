@@ -1,11 +1,13 @@
 module DayTwo (
   dayTwoPartOne,
+  dayTwoPartTwo,
   isGrabPossible,
   isPossible,
   parseGrabToSegments,
   parseGrab,
   parseGrabs,
   parseGame,
+  minCubes,
   Grab (Grab),
   Game (Game)
 ) where 
@@ -83,10 +85,17 @@ getGameId :: Game -> Integer
 getGameId (Game i _) = i
 
 dayTwoPartOne :: [String] -> Integer
-dayTwoPartOne input = 
-  let 
-    games = map parseGame input 
-    possibleGames = filter (isPossible 12 13 14) games
-  in 
-    sum (map getGameId possibleGames)
+dayTwoPartOne = sum . map getGameId . filter (isPossible 12 13 14) . map parseGame
 
+minCubes :: Game -> (Integer, Integer, Integer)
+minCubes (Game _ grabs) = 
+  let 
+    takeR (Grab r _ _) = r 
+    takeG (Grab _ g _) = g 
+    takeB (Grab _ _ b) = b
+    maxOf f = maximum $ map f grabs
+  in 
+    (maxOf takeR, maxOf takeG, maxOf takeB)
+
+dayTwoPartTwo :: [String] -> Integer
+dayTwoPartTwo = sum . map ((\(a,b,c)->a*b*c) . minCubes . parseGame) 
