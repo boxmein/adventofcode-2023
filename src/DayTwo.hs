@@ -56,9 +56,10 @@ parseGrabsMaybe s =
 parseGrab :: String -> Maybe Grab 
 parseGrab s = 
   let segments = parseGrabToSegments s
-      r = unwrapOrZero (fmap fst (find ((=="red").snd) segments))
-      g = unwrapOrZero (fmap fst (find ((=="green").snd) segments))
-      b = unwrapOrZero (fmap fst (find ((=="blue").snd) segments))
+      unwrapColor color = unwrapOrZero (fmap fst (find ((==color) . snd) segments))
+      r = unwrapColor "red"
+      g = unwrapColor "green"
+      b = unwrapColor "blue"
   in
     Just (Grab r g b)
 
