@@ -1,6 +1,7 @@
 module Lib
     ( stringReplace
     , runOverLinesOfFile
+    , splitOnFirst
     ) where
 
 stringReplace :: [Char] -> [Char] -> [Char] -> [Char]
@@ -21,3 +22,6 @@ runOverLinesOfFile :: (Show a) => String -> ([String] -> a) -> IO ()
 runOverLinesOfFile filename func = do 
   fd <- readFile filename
   (putStrLn . show . func . lines) fd
+
+splitOnFirst :: Char -> String -> (String, String)
+splitOnFirst ch s = (takeWhile (/= ch) s, drop 1 (dropWhile (/= ch) s))
