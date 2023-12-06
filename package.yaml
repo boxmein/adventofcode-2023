@@ -41,6 +41,7 @@ executables:
     main:                DayOneMain.hs
     source-dirs:         app
     ghc-options:
+    - -main-is DayOneMain
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
@@ -50,12 +51,52 @@ executables:
     main:                DayTwoMain.hs
     source-dirs:         app
     ghc-options:
+    - -main-is DayTwoMain
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
     - adventofcode
-
+  daythree-exe:
+    main:                DayThreeMain.hs
+    source-dirs:         app
+    ghc-options:
+    - -main-is DayThreeMain
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - adventofcode
+  dayfour-exe:
+    main:                DayFourMain.hs
+    source-dirs:         app
+    ghc-options:
+    - -main-is DayFourMain
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - adventofcode
+  dayfive-exe:
+    main:                DayFiveMain.hs
+    source-dirs:         app
+    ghc-options:
+    - -main-is DayFiveMain
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - adventofcode
+  daysix-exe:
+    main:                DaySixMain.hs
+    source-dirs:         app
+    ghc-options:
+    - -main-is DaySixMain
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - adventofcode
 tests:
   adventofcode-test:
     main:                Spec.hs

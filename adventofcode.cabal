@@ -25,9 +25,12 @@ source-repository head
 
 library
   exposed-modules:
+      DayFive
+      DayFour
       DayOne
-      DayTwo
+      DaySix
       DayThree
+      DayTwo
       Lib
   other-modules:
       Paths_adventofcode
@@ -38,25 +41,69 @@ library
       base >=4.7 && <5
   default-language: Haskell2010
 
-executable dayone-exe
-  main-is: DayOneMain.hs
+executable dayfive-exe
+  main-is: DayFiveMain.hs
   other-modules:
+      DayFourMain
+      DayOneMain
+      DaySixMain
+      DayThreeMain
+      DayTwoMain
       Paths_adventofcode
   hs-source-dirs:
       app
-  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is DayFiveMain -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adventofcode
     , base >=4.7 && <5
   default-language: Haskell2010
 
-executable daytwo-exe
-  main-is: DayTwoMain.hs
+executable dayfour-exe
+  main-is: DayFourMain.hs
   other-modules:
+      DayFiveMain
+      DayOneMain
+      DaySixMain
+      DayThreeMain
+      DayTwoMain
       Paths_adventofcode
   hs-source-dirs:
       app
-  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is DayFourMain -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      adventofcode
+    , base >=4.7 && <5
+  default-language: Haskell2010
+
+executable dayone-exe
+  main-is: DayOneMain.hs
+  other-modules:
+      DayFiveMain
+      DayFourMain
+      DaySixMain
+      DayThreeMain
+      DayTwoMain
+      Paths_adventofcode
+  hs-source-dirs:
+      app
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is DayOneMain -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      adventofcode
+    , base >=4.7 && <5
+  default-language: Haskell2010
+
+executable daysix-exe
+  main-is: DaySixMain.hs
+  other-modules:
+      DayFiveMain
+      DayFourMain
+      DayOneMain
+      DayThreeMain
+      DayTwoMain
+      Paths_adventofcode
+  hs-source-dirs:
+      app
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is DaySixMain -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adventofcode
     , base >=4.7 && <5
@@ -65,10 +112,32 @@ executable daytwo-exe
 executable daythree-exe
   main-is: DayThreeMain.hs
   other-modules:
+      DayFiveMain
+      DayFourMain
+      DayOneMain
+      DaySixMain
+      DayTwoMain
       Paths_adventofcode
   hs-source-dirs:
       app
-  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is DayThreeMain -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      adventofcode
+    , base >=4.7 && <5
+  default-language: Haskell2010
+
+executable daytwo-exe
+  main-is: DayTwoMain.hs
+  other-modules:
+      DayFiveMain
+      DayFourMain
+      DayOneMain
+      DaySixMain
+      DayThreeMain
+      Paths_adventofcode
+  hs-source-dirs:
+      app
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is DayTwoMain -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adventofcode
     , base >=4.7 && <5
@@ -78,9 +147,12 @@ test-suite adventofcode-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
+      DayFiveSpec
+      DayFourSpec
       DayOneSpec
-      DayTwoSpec
+      DaySixSpec
       DayThreeSpec
+      DayTwoSpec
       LibSpec
       Paths_adventofcode
   hs-source-dirs:

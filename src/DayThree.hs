@@ -1,11 +1,7 @@
-module DayThree (
-  dayThreePartOne
-) where 
-
-import Data.Char (isDigit)
+module DayThree
+  ( dayThreePartOne,
+  )
+where
 
 dayThreePartOne :: [String] -> Integer
 dayThreePartOne _ = 0
-
-isDot = (== '.')
-isSymbol x = (not (isDot x || isDigit x))
