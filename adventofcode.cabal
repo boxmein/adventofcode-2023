@@ -28,6 +28,7 @@ library
       DayFive
       DayFour
       DayOne
+      DaySeven
       DaySix
       DayThree
       DayTwo
@@ -46,6 +47,7 @@ executable dayfive-exe
   other-modules:
       DayFourMain
       DayOneMain
+      DaySevenMain
       DaySixMain
       DayThreeMain
       DayTwoMain
@@ -63,6 +65,7 @@ executable dayfour-exe
   other-modules:
       DayFiveMain
       DayOneMain
+      DaySevenMain
       DaySixMain
       DayThreeMain
       DayTwoMain
@@ -80,6 +83,7 @@ executable dayone-exe
   other-modules:
       DayFiveMain
       DayFourMain
+      DaySevenMain
       DaySixMain
       DayThreeMain
       DayTwoMain
@@ -92,12 +96,31 @@ executable dayone-exe
     , base >=4.7 && <5
   default-language: Haskell2010
 
+executable dayseven-exe
+  main-is: DaySevenMain.hs
+  other-modules:
+      DayFiveMain
+      DayFourMain
+      DayOneMain
+      DaySixMain
+      DayThreeMain
+      DayTwoMain
+      Paths_adventofcode
+  hs-source-dirs:
+      app
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is DaySevenMain -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      adventofcode
+    , base >=4.7 && <5
+  default-language: Haskell2010
+
 executable daysix-exe
   main-is: DaySixMain.hs
   other-modules:
       DayFiveMain
       DayFourMain
       DayOneMain
+      DaySevenMain
       DayThreeMain
       DayTwoMain
       Paths_adventofcode
@@ -115,6 +138,7 @@ executable daythree-exe
       DayFiveMain
       DayFourMain
       DayOneMain
+      DaySevenMain
       DaySixMain
       DayTwoMain
       Paths_adventofcode
@@ -132,6 +156,7 @@ executable daytwo-exe
       DayFiveMain
       DayFourMain
       DayOneMain
+      DaySevenMain
       DaySixMain
       DayThreeMain
       Paths_adventofcode
@@ -150,6 +175,7 @@ test-suite adventofcode-test
       DayFiveSpec
       DayFourSpec
       DayOneSpec
+      DaySevenSpec
       DaySixSpec
       DayThreeSpec
       DayTwoSpec

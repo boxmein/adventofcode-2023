@@ -97,6 +97,16 @@ executables:
     - -with-rtsopts=-N
     dependencies:
     - adventofcode
+  dayseven-exe:
+    main:                DaySevenMain.hs
+    source-dirs:         app
+    ghc-options:
+    - -main-is DaySevenMain
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - adventofcode
 tests:
   adventofcode-test:
     main:                Spec.hs
